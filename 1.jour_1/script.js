@@ -70,7 +70,6 @@ function montre() {
         // nombre --
 
     }
-
 }
 
 setInterval(montre, 200)
