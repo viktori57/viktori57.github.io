@@ -53,7 +53,7 @@ function horloge() {
     
 } 
 
-setInterval(horloge, 1000)
+//setInterval(horloge, 1000)
 
 
 // Je voudrais un compte à rebours qui commence à 50
@@ -67,12 +67,12 @@ function montre() {
         console.log(nombre)
         nombre = nombre - 1
         // nombre -= 1
-        // nombre--
+        // nombre --
+
+    }
 
 }
 
-}
-
-setinterval(montre, 20)
+setInterval(montre, 200)
 
 
