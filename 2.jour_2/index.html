@@ -5,12 +5,11 @@
   <meta charset="UTF-8">
   <title>cours HTML</title>
   <link rel="stylesheet" href="./style.css">
-  <script src=".script.js"></script>
 </head>
 <body>
-  <p>Bonjour je suis de bonne humeur !</p>
+  <p class="bonjour">Bonjour je suis de bonne humeur !</p>
 
-  <table>
+  <table class="bonjour">
     <tr>
       <th>Lieu</th> 
       <td>Auboue</td>
@@ -119,7 +118,35 @@
         <td>Social</td>
     </tr>
   </table>
+  <p id="animal">Test</p>
 
+  <form action="">
+    <label for="Name">Nom : </label>
+    <input type="text" name="name" id="name">
+    <br><br>
+    <label for="prénom">Prénom : </label>
+    <input type="text" name="prénom" id="prénom">
+    <br><br>
+    <label for="age">Age : </label>
+    <input type="number" name="age" id="age">
+    <br><br>
+    <input type="radio" name="sexe" id="masculin">
+    <label for="masculin">masculin</label>
+    <br><br>
+    <input type="radio" name="sexe" id="autruche">
+    <label for="autruche">Autruche</label>
+    <br><br>
+    <input type="checkbox" name="me" id="me">
+    <label for="me" >Je suis moi ?</label>
+    <br><br>
+    <input type="submit" value="envoyer !">
+  </form>
+ 
+    
 
 </body>
 </html>
+
+
+
+

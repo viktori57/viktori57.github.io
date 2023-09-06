@@ -72,6 +72,47 @@ function montre() {
     }
 }
 
-setInterval(montre, 200)
+//setInterval(montre, 200)
 
 
+// Array = Tableau
+// Type de variable qui est elle même un tableau
+//          0       1       2       3
+var tab = [
+    10, "Bonjour", 7.5, null]
+// Cette variable est tableau qui contient 4 valeurs dans l'ordre
+// 10
+// "bonjour"
+// 7.5
+// null
+console.log(tab[1])
+ // On affiche la valeur qui se trouve à la position 1 qui est "Bonjour"
+console.log(tab[3])
+// On affiche la valeur qui se trouve à la position 3 qui est null
+// Je voudrais un tableau qui se nomme chmilblik qui comporte
+// 5 valeur de type srting et 5 valeur de typ int ou float
+
+var chmilblik = [
+    "Numéro", "Age", "Naissance", "Poids", "Taille",
+    6, 42, 15, 72,
+    1.70
+
+
+]
+console.log(chmilblik)
+console.log(chmilblik.length) // Pour afficher le nombre de valeur du tableau
+
+// getElementById séléctionne un élément qui à l'id défini sur
+// animal dans ce cas
+// addEventlistener créer une écoute d'évènement
+
+let animal = "Autruche"
+let temp = ""
+document.getElementById('animal').addEventListener('click',function() {
+    // Je regarde le texte qui ce trouve dans cet élément
+       temp = document.getElementById('animal').innerHTML
+     // Je modifie le texte qui ce trouve dans cet élément par la valeur
+    // de la variable animal
+    document.getElementById('animal').innerHTML = animal
+    animal = temp
+})
