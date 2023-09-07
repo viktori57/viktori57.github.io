@@ -19,3 +19,43 @@ tr:nth-child(odd) {
 table {
     border-radius: 15px;
 }
+
+input[type="submit"], input[type="reset"] {
+    font-size: 1.7em;
+    border-radius: 25%;
+}
+
+#message {
+    resize: none;
+}
+/* Je créer une animation qui se nomme animationimg au début elle va transform scalex en -1
+puis elle va transform scalex en 1 et à la fin elle va transform scalex en -1 */
+@keyframes animationimg {
+    0%{
+        transform: (1);
+    }
+    50%{
+        transform: scaleX(1);
+    }
+    
+    100%{
+        transform: scaleX(-1);
+    }
+}
+
+img {
+    border: 3px dashed gray;
+    border-radius: 25px;
+    opacity: .6;
+    width: 50%;
+    /* height:auto; max-width: 100%; je rend m image recurcive/responsive*/
+    filter: blur(0.5px);
+    filter: contrast(100%);
+    animation: animationimg 1.5s ease-in infinite ;
+    /* Je dit que l'élément img joue l'animation qu'elle doit durée 1.5s en fonctionnement 
+    en ease-in et elle se joue un nombre infini de fois */
+}
+
+img:hover {
+    transform: scalex(-1) ;
+}

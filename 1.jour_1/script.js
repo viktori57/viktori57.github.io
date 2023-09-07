@@ -76,6 +76,7 @@ function montre() {
 
 
 // Array = Tableau
+// c'est un tableau indéxé
 // Type de variable qui est elle même un tableau
 //          0       1       2       3
 var tab = [
@@ -114,5 +115,77 @@ document.getElementById('animal').addEventListener('click',function() {
      // Je modifie le texte qui ce trouve dans cet élément par la valeur
     // de la variable animal
     document.getElementById('animal').innerHTML = animal
+    document.getElementById('animal').style.fontSize ='10em'
     animal = temp
 })
+
+while (false) {} // Tandis que ce qu'il ce trouve dans les parenthèses 
+// est vrai elle tourne
+
+for(var i=1; i <= 10; i++) {
+    // Je défini un variable i qui s'incrémenter de 1 tous les tours de
+    // la boucle grace à i++
+    // Et je lui demande de tourner jusqu'à ce que i soit supérieur à 10
+    console.log(i)
+}
+
+// La boucle tourne jusqu'à la taille du tableau
+for(var i=0; i <chmilblik.length; i++) {
+    console.log(chmilblik[i]) 
+    if (i == 3) {
+        break
+        
+    }
+ }
+
+ do {
+    console.log('BONJOUR')
+// Elle s'éxecute une fois même si la condition est fausse 
+// Et elle continu si de s'éxecuter si la condition est vrai
+ } while (false);
+
+ for (index in chmilblik) {
+    console.log(index)
+ }
+ 
+ // Tableau Associatif
+ var tab_assoc = {"ami":"chien", "cafe":"caféine" }
+ for (index in tab_assoc) {
+    console.log(index)
+ }
+
+ for (var i=10; i >= 0; i--) {
+// console.log("Il reste " + i + " lignes(s) à écrire")
+// console.log("Il reste", i, "lignes(s) à écrire")
+    console.log(`Ìl reste ${i} ligne${i <= 1 ? '' : 's'} à écrire`)
+    // ${i <= 1 ? '' : 's'} = Condition ternaire sois si i<=1 alors(?) je change rien sinon(:) je mets S
+ }
+
+ // i <= 1 '' : 's'
+ // Reviens à faire
+ // if (i <= 1) { // Si vrai
+//         consol.log('')
+// { else // sino faux
+//       console.log('s')
+// }
+
+function diviseur(n) {
+    var i = 2;
+    var temp = '1';
+    while (i <= n) {
+        if (n % i == 0) {
+            temp = temp + ', ' + i;
+        }
+        i++;
+
+    }
+    return temp
+    
+}
+
+for (let index = 1; index <= 100; index++) {
+    console.log(`Les diviseurs de ${index}  sont: ${diviseur(index)}`)
+}
+
+
+
