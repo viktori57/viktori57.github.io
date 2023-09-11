@@ -1,0 +1,28 @@
+
+.conteneur {
+    background-color: black;
+    height: 200px;
+    width: 100%; /* Prend toute la largeur de la page */
+    display: flex; /* L'afficher se met en mode felx */
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rouge {
+    background-color: red;
+    width: 10%;
+    height: 75px;
+}
+
+.vert {
+    background-color: green;
+    width: 10%;
+    height: 75px;
+}
+
+.orange {
+    background-color: orange;
+    width: 10%;
+    height: 75px;
+}

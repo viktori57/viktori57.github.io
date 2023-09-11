@@ -1,3 +1,7 @@
+<?php
+// Quand le fichier est lu on veur que le fichier db sois lu aussi
+require_once('db.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -209,7 +213,7 @@ switch (true) {
 
     ?>
     
-<form action="" method="post">
+<form action="validation.php" method="post">
     <pre>
         <h1><legend>Register</legend></h1>
         <label for="First">First name :</label><br>
@@ -252,21 +256,70 @@ switch (true) {
 // La fonction isset sert à regarder si la variable qui lui
 // est donner est bien défini dans ce cas si elle regarde
 // Si la variable $_POST est défini
-    if (isset($_POST) && !empty($_POST)) { // $_GET
-        echo '<pre>'; var_dump($_POST); echo '</pre>';
-        echo $_POST['first'];
-        echo $_POST['password'];
-        // Sha1 Hash le mot céest à dire
-        // le compléxifi et le rend illisible
-        // sha1 / md5
-        echo sha1($_POST['password']);
-        echo md5($_POST['password']);
+    
 
-}
+     // Je prepare ma commande
+    $select= $bdd->prepare('SELECT * FROM utilisateur WHERE GENDER= ?;');
+    // Je l'éxecute en lui donnant une valeur à la place des ?
+    $select->execute(array('male'));
+    // Je récupère tous ce que me renvoie ma commande
+    $total = $select->fetchAll(PDO::FETCH_ASSOC);
+
+    // Je l'affiche
+    echo '<pre>';
+    var_dump($total);
+    echo '</pre>';
+
+    echo $total[2]['gender'];
 
 
 
 ?>
+<form action="" method="post">
+        <label for="yourname">Your name</label><br>
+        <input type="text" name="yourname" id="yourname">
+        <br>
+        <label for="email">Your mail</label>
+        <br>
+        <input type="email" name="email" id="email">
+        <br><br>
+        <label for="message">Your message</label>
+        <br>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <br>
+        <label for="number">Give me a number !</label>
+        <br>
+        <input type="number" name="number" id="number">
+        <br><br>
+        <input type="submit" value="envoyer">
+
+</form>
+
+ <?php
+
+
+if (isset($_POST) && !empty($_POST)) { 
+    settype($_POST['number'], 'integer');
+    $newmessage = $bdd->prepare('INSERT INTO messages(name, email, message, number) VALUES (?, ?, ?, ?)');
+    $newmessage->execute(array(
+
+            $_POST['yourname'],
+            $_POST['email'],
+            $_POST['message'],
+            $_POST['number'],
+            
+        ));
+
+
+  
+  
+
+    
+    }  
+
+        ?>        
+
+
 <br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>

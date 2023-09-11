@@ -61,4 +61,31 @@ img:hover {
 }
 .test {
     color: blue;
+
+.fieldset {
+    width: 10px;
+}
+
+.conteneur {
+    width: 100%;
+    display: flex;
+}
+
+.rouge {
+    background-color: red;
+    width: 25%;
+    height: 75px;
+}
+
+.vert {
+    background-color: green;
+    width: 25%;
+    height: 75px;
+}
+
+.orange {
+    background-color: orange;
+    width: 25%;
+    height: 75px;
+}
 }
