@@ -1,28 +1,229 @@
+/* front face sert à rajouter de nouvelle famille d'écriture 
+qui ne sont pas disponible nativement (Sans rien rajouter en lus) */
+@font-face { 
+    font-family: poppins;
+    src: url(./Poppins-ExtraBoldItalic.ttf);}
+ 
 
 .conteneur {
     background-color: black;
-    height: 200px;
+    /* height: 200px; */
+    height: 300px;
     width: 100%; /* Prend toute la largeur de la page */
     display: flex; /* L'afficher se met en mode felx */
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
+    justify-content: space-around;
+    /* justify-content joue avec la largeur quand le flex-direction est en row
+    quand flex-direction est en column il joue en hauteur*/
+    align-items: flex-start;
+    /* align-items fait la même chose que justify-content mais inverser c'est à dire 
+    qu'il joue avec la hauteur quand flex-direction est en rox et en largeur quand
+    /* flex-direction: column; */
+    align-content: space-around;
+    /* fait la même chose que align-items mais il gère aussi les multilignes de conteneur */
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* le flex-wrap sert a remettre à la ligne quan les éléments n'ont plus de place dans la largeur
+    quand il est en mode nowrap wrap
+    (par défaut il est en mode nowrap 
+    */
 }
 
 .rouge {
     background-color: red;
     width: 10%;
-    height: 75px;
+    height: 100px;
+    border: 10px solid blue;
 }
 
 .vert {
     background-color: green;
     width: 10%;
-    height: 75px;
+    height: 100px;
+    border: 10px solid blue;
 }
 
 .orange {
     background-color: orange;
     width: 10%;
-    height: 75px;
+    height: 100px;
+    border: 10px solid blue;
 }
+
+
+
+
+
+.grand {
+
+    background-color: darkgray;
+    height: 400px;
+    width: 60%;
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    
+}
+    .petit {
+
+        background-color: aquamarine;
+        width: 45%;
+        height: 90%;
+        display: flex;
+        align-items: flex-end;
+    }
+    .petit h1 {
+
+        color: darkgrey;
+        font-size: 3em;
+        margin:15;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    #secondpetit {
+        background-color: transparent;
+        align-content: space-between;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .moyen {
+        width: 100%;
+        height: 30%;
+        background-color: aquamarine;
+        
+    }
+    .toutpetit {
+        width: 45%;
+        height: 30%;
+        background-color: aquamarine;
+    }
+    
+
+.violet {
+    background-color: violet;
+}
+.Orange {
+    background-color: orange;
+}
+.bleu {
+    background-color: aqua;
+}
+.red {
+    background-color: red;
+}
+    .flexbox {
+
+        background-color: blueviolet;
+        height: 600px;
+        width: 50%;
+        display: flex; 
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 5%;
+    }
+    .cote_gauche {
+        width: 40%;
+        height: 70%;
+        /*background-color: aqua;*/
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+    }
+    
+    .cote_droit {
+        width: 40%;
+        height: 70%;
+
+    }
+    .long {
+        width: 100%;
+        height: 20%;
+    }
+    .cote_gauche .gauche {
+        width: 50%;
+        height: 75%;
+         /* Temporaire pour */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .cote_gauche .droite {
+        width: 45%;
+        height: 75%;
+    }
+    .cote_gauche .gauche .petite {
+        width: 100%;
+        height: 65%;
+    }
+    .cote_gauche .gauche .trespetite {
+        width: 100%;
+        height: 30%;
+    }
+
+    .cote_droit { 
+        width: 40%;
+        height: 70%;     
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .cote_droit .gauche {
+        width: 45%;
+        height: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .cote_droit .gauche .petite1 {
+        width: 100%;
+        height: 35%;
+        
+    }
+    
+    .cote_droit .gauche .petite2 {
+        width: 100%;
+        height: 20%;
+    }
+    .cote_droit .gauche .petite3 {
+        width: 100%;
+        height: 35%;
+    }
+    .cote_droit .droite {
+        width: 45%;
+        height: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .cote_droit .droite .petite1 {
+        width: 100%;
+        height: 40%;
+    }
+    .cote_droit .droite .petite2 {
+        width: 100%;
+        height: 30%;
+    }
+    .cote_droit .droite .petite3 {
+        width: 100%;
+        height: 25%;
+    }
+    .cote_droit .long {
+        height: 30%;
+    }
+    .flexbox h1 {
+        display: block;
+        margin: 2px;
+        font-size: 8em;
+        color: white;
+        font-weight: bolder;
+        font-family: poppins;
+    }
+
+
+    
+    
+    
+
+
+
