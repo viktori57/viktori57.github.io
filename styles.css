@@ -219,6 +219,11 @@ qui ne sont pas disponible nativement (Sans rien rajouter en lus) */
         font-weight: bolder;
         font-family: poppins;
     }
+    #minuteur {
+        font-size: 6em;
+        font-family: poppins;
+        letter-spacing: 10px;
+    }
 
 
     
