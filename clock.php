@@ -91,35 +91,98 @@
 
         
       ?> 
-      <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="styles.css">
-    <title>classement JO 2016</title>
+      
+
 
      
       <table>
-      <thead>
-        <th colspan="6">Jeux Olympiques de Rio 2016</th>
+     
+        
+      
+      <br>
+      <table>
+        <thead>
+      <th colspan="8">Jeux Olympiques de Rio 2016</th>
       </thead>
+      <tbody>
     <tr>
-        <th colspan="6">Pays</th>
-        <br>
-        <td>USA</td>
+        <th></th>
+        <th>Pays</th>
+        <th><img src="or.png" alt=""></th>
+        <th><img src="argent.png" alt=""></th>
+        <th><img src="bronze.png" alt=""></th>
+        <th><img src="total.png" alt=""></th>
+        
+    </tr>   
+    <tr>
+        <th>1</th>
+        <td><img src="usa.png" alt=""><span>USA</span></td>
         <td>46</td>
         <td>37</td>
         <td>38</td>
-        <td>121</td>
-    </tr>   
+        <td class="hover">121</td>
+    </tr>
     <tr>
-        <th><Grande-Bretagne></th>
+        <th>2</th>
+        <td><img src="grande_bretagne.png" alt=""><span>Grande-Bretagne</span></td>
         <td>27</td>
         <td>23</td>
         <td>17</td>
-        <td>67</td>
+        <td class="hover">67</td>
     </tr>
+    <tr>
+        <th>3</th>
+        <td><img src="chine.png" alt=""><span>Chine</span></td>
+        <td>26</td>
+        <td>18</td>
+        <td>26</td>
+        <td class="hover">70</td>
+
+    </tr>
+    <tr>
+        <th>4</th>
+        <td><img src="russie.png" alt=""><span>Russie</span></td>
+        <td>19</td>
+        <td>18</td>
+        <td>19</td>
+        <td class="hover">56</td>
+
+    </tr>
+    <tr>
+        <th>5</th>
+        <td><img src="allemagne.png" alt=""><span>Allemagne</span></td>
+        <td>17</td>
+        <td>10</td>
+        <td>15</td>
+        <td class="hover">42</td>
+
+    </tr>
+    <tr>
+        <th>6</th>
+        <td><img src="japon.png" alt=""><span>Japon</span></td>
+        <td>12</td>
+        <td>8</td>
+        <td>21</td>
+        <td class="hover">41</td>
+
+    </tr>
+    <tr>
+        <th>7</th>
+        <td><img src="france.png" alt=""><span>France</span></td>
+        <td>10</td>
+        <td>18</td>
+        <td>14</td>
+        <td class="hover">42</td>
+
+    </tr>
+    </tbody>
+    <tfoot>
+    <th colspan="8">Ce classement est limité aux 7 premières nations</th>
+    </tfoot>
+    
         
         
-      
+    </table>
 
         
          

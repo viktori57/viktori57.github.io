@@ -225,16 +225,79 @@ qui ne sont pas disponible nativement (Sans rien rajouter en lus) */
         letter-spacing: 10px;
     }
 
+    table, th, td {
 
-    
-    .tableau {
-        tr, td, th, table {
-            border: 1px solid black;
-            border-radius: 15px;
-            border-spacing: 0px;
-    }
-    
-
-
+        border: 1px solid black;
+        border-collapse: collapse;
 
     }
+    table {
+        width: 70%;
+    }
+    thead th, tfoot th{
+
+        background-color: green;
+        color: white;
+        font-size: 1em;
+        padding: 5px 0 5px 0;
+    }
+    * {
+        text-align: center;
+    }
+    td img, td span{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    td img{
+        padding-right: 10px;
+    }
+    td:nth-child(2){
+        text-align: left;
+
+    }
+    td:first-child, tbody tr th {
+    background-color: black;
+    color: #FFF;
+    font-size: 1,3em;
+    font-weight: 600;
+    padding: (px 0 5px);
+    text-align: center;
+    }
+    .hover{
+        background-color:yellow;
+        padding: 0 4px;
+    }
+    tr:hover .hover, tr:hover{
+        background-color:gray;
+        color: #FFF;
+    }
+    tr:hover .hover{
+        color: blue;
+    }
+    td:first-child{
+        padding: 15px 7px 15px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+    
+    
+   
+    
+
+    
+
+    

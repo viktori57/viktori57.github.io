@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 
+    src: url();
+ }
+
+ .blanc{
+    background-color: white;
+    width: 10%;
+    height: 100px;
+    border: 2px solid black;
+}
