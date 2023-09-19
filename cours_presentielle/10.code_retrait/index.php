@@ -1,33 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width=, initial-scale=1.0">
-    <title>code_retrait</title>
+    <title>ATM</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="contenair"></div>
-        <div class="code"></div>
-        <label for="password"></label>
-        <input type="password" name="password id="password">
-        <div class="LittleContenair"></div>
-        <div class="button">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button type="reset">Decliner</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button type="reset">Effacer</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button type="submit">Entrez</button>
-            <button>-</button>
-            <button>0</button>
-            <button>+</button>
-        </div>
+    <section>
+        <form action="" method="post">
+    <span class="num" id="texte">
+        <span id="invisible"></span>
+        <input type="text" id='affiche' readonly>
+</span>
+   <div class="num">1</div>
+   <div class="num">2</div>
+   <div class="num">3</div>
+   <div class="num" id="reject">Decliner<p class="red"></p></div>
+   <div class="num">4</div>
+   <div class="num">5</div>
+   <div class="num">6</div>
+   <div class="num" id="erase">Effacer<p class="yellow"></p></div>
+   <div class="num">7</div>
+   <div class="num">8</div>
+   <div class="num">9</div>
+   <button type="submit" class="num">Entrez<p class="green"></p></button>
+   <div class="num" id='calcul-'>-</div>
+   <div class="num">0</div>
+   <div class="num" id='calcul+'>+</div>
+
+   
+   </form>
+   
+    </section>
+    <script>
+        var button = document.getElementsByClassName('num')
+
+        for (let index = 0; index < button.length; index++) {
+            if (button[index].id.length > 0 || button[index].type == 'submit') continue
+             button[index].addEventListener('click', function() {
+                var input = document.getElementById('affiche')
+                var span = document.getElementById('invisible')
+                if (input.value.length == 4) {
+                    input.value = ""
+                    span.innerHTML = ""
+                 return 
+                }
+                span.innerHTML += button[index].innerHTML
+                input.value += '*'
+                })
+
+        }
+        function Stop() {
+            document.getElementById('affiche').value = ''
+            document.getElementById('invisible').innerHTML = ''
+        }
+        document.getElementById('reject').addEventListener('click', Stop)
+        document.getElementById('erase').addEventListener('click', Stop)
+
+    </script>
+    
+
 
             
    
