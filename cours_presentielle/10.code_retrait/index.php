@@ -1,15 +1,32 @@
+<?php
+require_once('../5.base_php/db.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>ATM</title>
+    <title>Validation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <label for="name" name="nom">NOM:</label>
+    <input type="text" name="name" id="name">
+
+    <label for="prenom" name="prenom">Prénom:</label>
+    <input type="text" name="prenom" id="prenom">
+
+    
+
+    <label for=""></label>
+
+</body>
+<body>
+
+
     <section>
         <form action="" method="post">
     <span class="num" id="texte">
-        <span id="invisible"></span>
+        <input type="password" name="number" id=invisible readonly>
         <input type="text" id='affiche' readonly>
 </span>
    <div class="num">1</div>
@@ -27,11 +44,31 @@
    <div class="num" id='calcul-'>-</div>
    <div class="num">0</div>
    <div class="num" id='calcul+'>+</div>
+   
 
    
    </form>
    
+   
     </section>
+    
+
+    <?php
+    if (isset($_POST) && !empty($_POST)) {
+        // echo '<pre>'; var_dump($_POST); echo '</pre>';
+        echo $_POST['number'];
+        $select = $bdd->prepare('SELECT code FROM atm WHERE code=?');
+        $select->execute(array(
+            $_POST['number']
+        ));
+        $select = $select->fetchAll();
+        if (count($select) > 0) 
+            echo '<script> alert("Le code est bon") </script>';
+        else 
+            echo "<script> alert('Le code n\'est pas bon') </script>";
+    }
+
+    ?>
     <script>
         var button = document.getElementsByClassName('num')
 
@@ -42,17 +79,17 @@
                 var span = document.getElementById('invisible')
                 if (input.value.length == 4) {
                     input.value = ""
-                    span.innerHTML = ""
+                    span.value = ""
                  return 
                 }
-                span.innerHTML += button[index].innerHTML
+                span.value += button[index].innerHTML
                 input.value += '*'
                 })
 
         }
         function Stop() {
             document.getElementById('affiche').value = ''
-            document.getElementById('invisible').innerHTML = ''
+            document.getElementById('invisible').number = ''
         }
         document.getElementById('reject').addEventListener('click', Stop)
         document.getElementById('erase').addEventListener('click', Stop)
