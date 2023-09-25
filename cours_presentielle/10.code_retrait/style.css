@@ -82,31 +82,22 @@ margin-right: auto;
     display: none;
 }
 
-.formulaire, fieldset {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, 50%);
-    width: 395px;
-    background-color: rgba(128,128,128,0.693);
-    border: 3px solid black;
-    display: flex;
-    position: relative;
+input:required:valid {
+    outline: none;
+    border-color: chartreuse;
 }
-
-.input {
-font-size: 1.1em;
-border: 2px ridge black;
-border-radius: 12px;
-padding: 5px;
-margin: 1px;
-margin-bottom: 3px;
-box-sizing: border-box;
-height: 50px;
-width: 92px;
-text-align: center;
-display: inline-block;
-background: none;
-font-weight: bolder;
+input:required:invalid {
+    outline: none;
+    border-color: red;
 }
 
 
+
+
+input {
+    background-color: none;
+    border: 3px ridge black;
+    border-radius: 10px;
+    margin: 2px;
+    outline: none;
+}
