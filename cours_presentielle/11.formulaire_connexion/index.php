@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (empty($_SESSION)) header('Location: login.php');
+if (empty($_SESSION)) header('Location: connexion.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,5 +18,6 @@ if (empty($_SESSION)) header('Location: login.php');
         Vous allez devoir créer trois page une de connexion, une d'inscription et une page d'accueil avec des 
         lien hypertext et si possible réussir à faire afficher le nom et prénom de la personne 
     -->
+    <a href="deconnexion.php">Se Déconnecter</a>
 </body>
 </html>

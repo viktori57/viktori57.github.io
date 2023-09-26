@@ -42,11 +42,11 @@ require_once('../5.base_php/db.php')
     </form>
     <?php
     if (isset($_POST) && !empty($_POST)) {/* !empty($_POST) = count($_POST) !== 0*/
-        $select = $bdd->prepare("SELECT * FROM users WHERE username=?");
-        $select->execute(array($_POST['username']));
+        $select = $bdd->prepare("SELECT * FROM users WHERE username=? AND email=?");
+        $select->execute(array($_POST['username'], $_POST['email']));
         $select = $select->fetchAll();
         if (empty($select)) {
-            $insert = $bdd->prepare('INSERT INTO users(prenom, nom,email, username, genre, password) VALUE (?, ?, ?, ?, ?);');
+            $insert = $bdd->prepare('INSERT INTO users(prenom, nom,email, username, genre, password) VALUE (?, ?, ?, ?, ?, ?);');
             $insert->execute(array(
              $_POST['firstname'],
                 $_POST['lastname'],

@@ -7,7 +7,7 @@ require_once('../5.base_php/db.php');
 <head>
     <meta charset="UTF-8">
     <title>Inscription</title>
-    <link rel="stylesheet" href="../../style/atm.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <a href="index.php">Page D'accueil</a>

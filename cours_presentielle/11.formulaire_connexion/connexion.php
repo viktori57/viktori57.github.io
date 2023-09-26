@@ -1,4 +1,6 @@
 <?php
+session_start();
+if (!empty($_SESSION)) header('Location: index.php');
 require_once('../5.base_php/db.php')
 ?>
 
@@ -7,7 +9,7 @@ require_once('../5.base_php/db.php')
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
-    <link rel="stylesheet" href="../../style/connexion.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <form action="" method="post">
@@ -17,16 +19,17 @@ require_once('../5.base_php/db.php')
             <label for="password">Mot de passe :</label>
             <input type="password" name="password" id="password" required>
             <input type="submit" value="Se connecter">
+            <a href="./forgotpassword.php">Mot de passe oublié ?</a>
             <a href="./register.php">Vous n'avez pas de compte ?</a>
         </pre>
     </form>
     <?php 
     if (isset($_POST) && !empty($_POST)) {
-        $select = $bdd->prepare('SELECT * FROM users WHERE (username=? OR email=?) AND password=?');
+        $select = $bdd->prepare('SELECT * FROM users WHERE (username=:login OR email=:login) AND password=:password');
         $select->execute(array(
-            $_POST['username'],
-            $_POST['username'],
-            sha1($_POST['password'])
+
+            'login' => $_POST['username'],
+            'password' => sha1( $_POST['password'])
         ));
         $select = $select->fetch(PDO::FETCH_ASSOC);
         if (!empty($select)) {
@@ -35,6 +38,7 @@ require_once('../5.base_php/db.php')
             header('Location: index.php');
         } else
         echo "<script> alert('Le mot de passe ou le pseudo n\'est pas bon') </script>";
+        
     }
     ?> 
 
