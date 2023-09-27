@@ -29,8 +29,8 @@ if (isset($_POST) && !empty($_POST)) {
     if (empty($select)) {
         echo '<script> alert("Cette adresse n\'est pas inscrite sur ce site") </script>';
     } else {
-          //  GenerateToken(50);  
-            SendEmail(10, "ABC", "enfants54@gmail.com");
+            $token = GenerateToken(50);  
+            SendEmail($select['id'], $token, $_POST['email']);
     }
 
 }
