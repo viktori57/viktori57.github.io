@@ -12,8 +12,9 @@ function GenerateToken($length) { // 10
     return substr(str_shuffle(str_repeat($token, $length)), 0, $length);
 }
 
-function SendEmail($id, $token, $email) {
-    function smtpmailer($to, $from, $from_name, $subject, $body) {
+function SendEmail( $email, $msg, $objet, $name) {
+        $from = 'dwwm.auboue@hotmail.com';
+
         $mail = new PHPMailer();
 
         $mail->isSMTP();
@@ -38,13 +39,11 @@ function SendEmail($id, $token, $email) {
 
         if (!$mail->Send()) {
             echo "Le mail ne s'est pas envoyé réessayer plus tard";
-            echo $mail->ErrorInfo;
         }else {
             echo "Le mail c'est envoyé avec succés";
         }
 
     }
-    $msg = "Lien pour réinitialiser votre mot de passe : http://localhost/cours_php/viktori57.github.io/cours_presentielle/11.formulaire_connexion/reset.php?id=$id&token=$token";
-    smtpmailer($email, 'dwwm.auboue@hotmail.com', 'DWWM', "Ok man", $msg);
+    // $msg = "Lien pour réinitialiser votre mot de passe : http://localhost/cours_php/viktori57.github.io/cours_presentielle/11.formulaire_connexion/reset.php?id=$id&token=$token";
+    // smtpmailer($email, 'dwwm.auboue@hotmail.com', $name, $objet, $msg);
 
-}

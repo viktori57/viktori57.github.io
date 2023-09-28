@@ -1,5 +1,6 @@
 <?php
-require_once('../5.base_php/db.php')
+require_once('../5.base_php/db.php');
+require_once('mail.php')
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -56,7 +57,11 @@ require_once('../5.base_php/db.php')
                 sha1($_POST['password'])
             
         ));
-        header("location: connexion.php");
+        $token = GenerateToken(50);
+        $msg = "Lien pour vérifier votre adresse mail : http://localhost/Viktori.github.io/exo/connexion/verify.php?id=" . $select[0]['id'] . "&token=$token";  
+        SendEmail($_POST['email'], $msg, "Validation Adresse Mail", 'DWWM');
+
+        header("Location: login.php");
         } else 
             echo '<script> alert("Ce nom d\'utilisatuer est déja utilisé") </script>';
 
@@ -71,28 +76,11 @@ require_once('../5.base_php/db.php')
             let Password = document.getElementById('password')
             let confirmPassword = document.getElementById('confirm_password')
 
-            if (Password.value !== confirmPassword.value)
-                confirmPassword.setCustomValidity('Les mots de passe doivent être identique')
-            else 
+            if (Password.value == confirmPassword.value)
                 confirmPassword.setCustomValidity('')
+            else 
+                confirmPassword.setCustomValidity('Les mots de passe doivent être identique')
 
-            
-        }
-        function SingleUsername() {
-        //     let Username = document.getElementById('username')
-        //     document.cookie = "username = " + Username.value
-
-            <?php 
-        //         $select = $bdd->prepare("SELECT * FROM users WHERE username=?");
-        //         $select->execute(array(
-        //             $_COOKIE['username']
-        //         ));
-        //         $select = $select->fetchAll();
-        //         setcookie('select', empty($select), time() + (86400 * 30), "/");
-        //     ?>                
-        //     // if (bool) {
-        //     //     Username.setCustomValidity('Ce nom d\'utilisateur est déjà utilisé')
-        //     // }
 
         }
     </script>
