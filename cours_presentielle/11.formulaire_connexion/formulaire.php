@@ -47,18 +47,19 @@ require_once('mail.php')
         $select->execute(array($_POST['username'], $_POST['email']));
         $select = $select->fetchAll();
         if (empty($select)) {
-            $insert = $bdd->prepare('INSERT INTO users(prenom, nom,email, username, genre, password) VALUE (?, ?, ?, ?, ?, ?);');
+            $insert = $bdd->prepare('INSERT INTO users(prenom, nom,email, username, genre, password, token) VALUE (?, ?, ?, ?, ?, ?,?);');
             $insert->execute(array(
              $_POST['firstname'],
                 $_POST['lastname'],
                 $_POST['email'],
                 $_POST['username'],                
                 $_POST['genre'],
-                sha1($_POST['password'])
+                sha1($_POST['password']),
+                $token
             
         ));
         $token = GenerateToken(50);
-        $msg = "Lien pour vérifier votre adresse mail : http://localhost/Viktori.github.io/exo/connexion/verify.php?id=" . $select[0]['id'] . "&token=$token";  
+        $msg = "Lien pour vérifier votre adresse mail : http://localhost/Viktori.github.io/exo/connexion/verify.php?token=$token";  
         SendEmail($_POST['email'], $msg, "Validation Adresse Mail", 'DWWM');
 
         header("Location: login.php");

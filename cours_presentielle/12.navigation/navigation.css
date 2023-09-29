@@ -1,0 +1,12 @@
+li {
+    display: inline-block;
+}
+
+ol {
+    list-style-type: lower-alpha;
+}
+
+nav {
+    background-color: aqua;
+}
+

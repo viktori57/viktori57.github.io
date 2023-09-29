@@ -8,9 +8,10 @@ if (isset($_GET) && !empty($_GET)) {
     ));
     $select = $select->fetchAll();
     if (empty($select)) 
-        header('Location: login.php');
+        header('Location: connexion.php');
+        elseif (!$select['confirm']) header('Location: connexion.php');
 } else 
-    header('Location: login.php');
+    header('Location: connexion.php');
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +19,7 @@ if (isset($_GET) && !empty($_GET)) {
 <head>
     <meta charset="UTF-8">
     <title>Changement du mot de passe</title>
-    <link rel="stylesheet" href="../../style/connexion.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <form action="" method="post">
@@ -44,7 +45,7 @@ if (isset($_GET) && !empty($_GET)) {
             ));
             $update = $update->rowCount();
             if ($update > 0) 
-                header('Location: login.php?success=reset');
+                header('Location: connexion.php?success=reset');
             else
                 echo 'Une erreur c\'est produite ';
         }
