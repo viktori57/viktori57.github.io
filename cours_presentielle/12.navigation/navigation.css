@@ -10,3 +10,39 @@ nav {
     background-color: aqua;
 }
 
+.navigation {
+    position: relative;
+    background: linear-gradient(90deg, #dd3d5f 0%, #fb7231 100%);
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 50%;
+    margin: 0 auto 0 auto;
+   
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+
+}
+
+.navigation li {
+    margin-right: 20px;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation li {
+    margin: 7px;
+}
+
+#search {
+    border-right: 2px solid white;
+    margin-right: 20px;
+}

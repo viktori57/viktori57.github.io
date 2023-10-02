@@ -24,16 +24,21 @@
         </ul>
     </nav>
     <box-icon name='search-alt-2'></box-icon>
-</body>
-<body>
-    <ol>
-            <li><a href="./home.php">Home</a></li>
-            <li><a href="./about.php">About</a></li>
+
+<br><br><br><br><br>
+ 
+    <nav class="navigation">
+    <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Support</a></li>
-            <box-icon name='search-alt-2'></box-icon>
+            <li><a href="#"><span id="search"></span><box-icon name='search' color="#fff"></box-icon></a></li>
+    </ul>
+</nav>
+   
 
-    </ol>
+    
 </body>
 
 
