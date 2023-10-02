@@ -6,13 +6,13 @@
 div {
     width: 200px;
     height: 100px;
-    display: block;
+    display: inline-block;
     background-color: black;
 }
 
-@media screen and (min-width: 850px){
+@media screen and (max-width: 850px){
     .grand div {
-        display: inline-block;
+        display: block;
     }
 }
 
@@ -34,7 +34,7 @@ div {
 
 
 .damier {
-    width: 415px;
+    width: 416px;
     height: 308.49px;
     background-color: chocolate;
 }
