@@ -40,7 +40,7 @@ box-icon[name='menu'] {
     display: none;
 }
 
-@keyframes slidebottom {
+@keyframes slideBottom {
     0% {
         height: 0;
     }
