@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(60,100,165);
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: aliceblue;
+    display: flex;
+    align-items: cet;
+    justify-content: space-between;
+    padding: 0 25px;
+    border-bottom: 1px solid gray;
+}
+nav span {
+    color: gray;
+    font-size: 1.7em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: gray;
+    font-size: 1.7em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+nav ul li {
+    margin: 10px 0 10px 25px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: cursive;
+}
+nav ul button {
+    background-color:rgb(232, 0, 144);
+
+    padding: 10px;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
