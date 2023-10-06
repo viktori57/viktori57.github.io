@@ -10,17 +10,18 @@
     <nav>
         <span><box-icon type='solid' name='wine'></box-icon>Exo</span>
         <ul>
-            <li><a href="#">SERVICES</a></li>
-            <li><a href="#">PRICING</a></li>
-            <li><a href="#">LEARN & SUPPORT</a></li>
-            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SERVICES <box-icon name='down-arrow' type='solid' color='gray' size="13.5px" ></box-icon></a></li>
+            <li><a href="#">PRICING <box-icon name='down-arrow' type='solid' color='gray' size="13.5px"></box-icon></a></li>
+            <li><a href="#">LEARN & SUPPORT <box-icon name='down-arrow' type='solid' color='gray' size="13.5px"></box-icon></a></li>
+            <li><a href="#">ABOUT <box-icon name='down-arrow' type='solid' color='gray' size="13.5px"></box-icon></a></li>        
+            <li><button>GET A FREE TRIAL</button></li>
         </ul>
-        <button>GET A FREE TRIAL</button>
     </nav>
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <footer>
+        <div>
         <ul>
             <li><a href="#">Products</a></li>
             <li><a href="#">Design & Developement</a></li>
@@ -47,14 +48,15 @@
             <li><a href="">News & Events</a></li>
         </ul>
         
-        <div>
-            <box-icon name='envelope'></box-icon>
-            <span>Stay Up-to-Date</span>
+        <div class="signup">
+            <span><box-icon name='envelope' color="#0000FF" size="55px"></box-icon> Stay Up-to-Date</span>
             <p>Get the latest blogs, eBooks, events, and whitepapers.</p>
             <button>SIGN ME UP</button>
         </div>
-
-        <div>
+        </div>
+        <div class="bar"></div>
+        
+        <div class="logo">
             <div>
                 <box-icon type='logo' name='facebook-circle' color='#ffffff'></box-icon>
                 <box-icon name='twitter' type='logo' color='#ffffff' ></box-icon>
@@ -62,7 +64,7 @@
                 <box-icon name='youtube' type='logo' color='#ffffff' ></box-icon>
             </div>
             <span>&copy; Copyright 2021 INFRAGISTICS. All Rights Reserved</span>
-            <div>
+            <div class="page">
                 <a href="">Terms of Use</a>
                 <a href="">Privacy Policy</a>
                 <a href="">Cookies</a>
