@@ -1,5 +1,11 @@
 <?php
-require_once('../5.base_php/dbcat.php')
+require_once('../5.base_php/dbcat.php');
+session_start();
+if (!empty($_SESSION)) {
+    session_unset();
+    session_destroy();
+    header('Location: index.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,7 +15,7 @@ require_once('../5.base_php/dbcat.php')
     <title>Connexion</title>
 </head>
 <body>
-    <?php include 'inc/header.php'; ?>
+    <?php $_GET['page'] = 'login'; include 'inc/header.php'; ?>
     <br><br><br><br>
 
     <form method='post'>
@@ -26,13 +32,13 @@ require_once('../5.base_php/dbcat.php')
     if (isset($_POST) && !empty($_POST)) {
         $select = $bdd->prepare('SELECT * FROM users WHERE (username=:user OR email=:user)');
         $select->execute(array(
-            'user' => $_POST['username']
+            'user' => $_POST['username'],
+            'pass' => password_hash($_POST['password'], PASSWORD_ARGON2ID)
         ));
         $select = $select->fetch(PDO::FETCH_ASSOC);
-        echo  $select['password'] . ' ' . $_POST['password'] . '<br>';
+        echo  !empty($select) ? 'true' : 'false';
         echo  password_verify($_POST['password'], $select['password']) ? 'true' : 'false';
         if (!empty($select) && password_verify($_POST['password'], $select['password'])) { 
-            session_start();
             $_SESSION = $select;
             header('Location: index.php');
         } else {

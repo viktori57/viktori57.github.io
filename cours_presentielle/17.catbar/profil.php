@@ -6,7 +6,9 @@
     <title>Profil</title>
 </head>
 <body>
-    <?php include 'inc/header.php'; ?>
+    <?php 
+    $_GET['page'] = 'profil';
+    include 'inc/header.php'; ?>
     
 </body>
 </html>

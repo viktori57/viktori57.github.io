@@ -9,7 +9,9 @@ require_once('../5.base_php/dbcat.php')
     <title>Inscription</title>
 </head>
 <body>
-    <?php include 'inc/header.php'; ?>
+    <?php
+     $_GET['page'] = 'register';
+    include 'inc/header.php'; ?>
     <br><br><br><br>
 
     <form method="post">
@@ -30,7 +32,7 @@ require_once('../5.base_php/dbcat.php')
         $insert->execute(array (
             $_POST['username'],
             $_POST['email'],
-            password_hash($POST['password'], PASSWORD_ARGON2ID)
+            password_hash($_POST['password'], PASSWORD_ARGON2ID)
         ));
 
         header('Location: login.php');

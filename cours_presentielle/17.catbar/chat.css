@@ -52,8 +52,9 @@ nav div box-icon[name="sun"] {
 }
 
 footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -115,5 +116,13 @@ form label {
 }
 
 form input[type="submit"] {
-    width: 150px;
+    width: 200px;
+}
+
+div {
+    margin: 0 auto 0 auto;
+}
+
+textarea {
+    resize: none;
 }
