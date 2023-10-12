@@ -29,7 +29,7 @@ if (!empty($_SESSION)) {
         include 'inc/header.php'
     ?>
 
-    <form action="AddCat.php" method="post">
+    <form action="function/AddCat.php" method="post">
         <h2>Rajout de chat</h2>
         <label for="prenom">Prénom :</label>
         <input type="text" name="prenom" id="prenom" required>
@@ -44,6 +44,45 @@ if (!empty($_SESSION)) {
         <label for="female">Femelle</label>
         <input type="radio" name="sexe" id="sexe" value="f" required>
         <input type="submit" value="Ajouter le chat">
+    </form>
+
+    <form action="function/RemoveCat.php" method="post">
+        <table>
+        <tr>
+                <th>Identification :</th>
+                <th>Prénom :</th>
+                <th>Couleur :</th>
+                <th>Description</th>
+                <th>Photo :</th>
+            </tr>
+            <?php
+                $select = $bdd->prepare('SELECT * FROM cat');
+                $select->execute();
+                $select = $select->fetchAll();
+                if (!empty($select)) {
+                    foreach ($select as $index => $valeur) {
+                        $id = $valeur['id'];
+                        $prenom = $valeur['prenom'];
+                        $color = $valeur['color'];
+                        $description = $valeur['description'];
+                        $photo = $valeur['photo'];
+
+                        echo "<tr> 
+                            <td> $id <input name'id' type='text' style='display:none' value='$id'> </td>
+                            <td> $prenom </td>
+                            <td> $color </td>
+                            <td> $description </td>
+                            <td> $photo </td>
+                            <td> <button name='veto' value='$id'>Vétérinaire</button> </td>
+                            <td> <button name='transfer' value='$id'>Transferer</button> </td>
+                            <td> <button name='delete' value='$id'>Supprimer</button> </td>
+                        </tr>";
+                        
+                    }
+                }
+            ?>
+
+        </table>
     </form>
 
 

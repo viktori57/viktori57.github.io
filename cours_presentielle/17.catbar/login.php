@@ -15,7 +15,9 @@ if (!empty($_SESSION)) {
     <title>Connexion</title>
 </head>
 <body>
-    <?php $_GET['page'] = 'login'; include 'inc/header.php'; ?>
+    <?php $_GET['page'] = 'login';
+    include 'inc/header.php';
+    ?>
     <br><br><br><br>
 
     <form method='post'>

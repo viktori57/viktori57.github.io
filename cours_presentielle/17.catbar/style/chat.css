@@ -127,12 +127,10 @@ textarea {
     resize: none;
 }
 
-
-::-webkit-validation-bubble,
-::-webkit-validation-bubble-arrow-clipper ,
-::-webkit-validation-bubble-arrow ,
-::-webkit-validation-bubble-message,
-::-webkit-validation-bubble-text-block 
-{
-    background-color: chartreuse;
+.cat {
+    width: 90% ;
+}
+.cat table tr td {
+    padding: 25px;
+    text-align: center;
 }
