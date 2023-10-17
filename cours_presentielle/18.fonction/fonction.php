@@ -187,7 +187,77 @@
         };
 
         echo InverseString('Bonjour tout le monde') . "<br>";
-        echo InverseString('Je s\'appel groot');
+        echo InverseString('Je s\'appel groot') . "<br>";
+
+        # créer une fonction qui se nomme Acroqui a comme paramètre une chaine de caractère
+        # et qui envoi que les initiales des mots de la phrase.
+
+        function Acronyme($phrase) {
+            $resultat = "";
+            $tab_phrase = explode(" ", $phrase);
+
+            foreach($tab_phrase as $mot) {
+                $resultat = $resultat . strtoupper($mot[0]); 
+            }
+
+            return $resultat;
+        }
+
+        echo Acronyme("va te faire enlever une dent");
+
+        # Créer une fonction AffichageTableau qui prend en argument un tableau et qui va devoir afficher un
+        # tableau en html sur notre page
+
+        $tab = [
+            'mdupond' => [
+                'prenom' => 'Martin',
+                'nom' => 'Dupond',
+                'age' => 25,
+                'ville' => 'Paris'
+         
+            
+            ],
+
+            "mmatin" => [
+                'prenom' => 'Martin',
+                'nom' => 'Matin',
+                'age' => 34,
+                'ville' => 'Auchwitz'
+            ]
+        ];
+        function AffichageTableau($tableau) {
+            if (!is_array($tableau) || empty($tableau)) {
+                return;
+            }
+            echo "<table>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Age</th>
+                    <th>Ville</th>
+                </tr>";
+            foreach($tableau as $ligne => $ligne) {
+                $prenom = $ligne['prenom'];
+                $nom = $ligne['nom'];
+                $age = $ligne['age'];
+                $ville = $ligne['ville'];
+
+                echo "<tr id=$index>
+                    <td>$prenom</td>
+                    <td>$nom</td>
+                    <td>$age</td>
+                    <td>$ville</td>
+                </tr>";
+            }
+            echo "</table>";
+            }
+        
+
+        AffichageTableau($tab);
+       
+        
+
     ?>
+    
 </body>
 </html>
