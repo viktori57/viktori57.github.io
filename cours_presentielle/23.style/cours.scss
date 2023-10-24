@@ -97,5 +97,5 @@ $i: 6;
     .item-#{$i} {
         width: 2em * $i;
     }
-    $i: $i - 2; // Ici je redéfini l variabe $i et je lui fait elle meme -2
+    $i: $i - 2; // Ici je redéfini la variabe $i et je lui fait elle meme -2
 }
