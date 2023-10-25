@@ -1,4 +1,4 @@
-$nuit: #000;
+$nuit: #2E1E28;
 $jour: #fff;
 
 // body[theme="jour"] {
@@ -171,7 +171,7 @@ $social:
 }
 body {
     @include ToggleNight('dark');
-    span {
+    a {
         @include ToogleNight('light');
     }
 }

@@ -1,11 +1,71 @@
-body {
-  background-color: violet;
+.personalPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2E1E28;
+  width: 100%;
 }
-
-div h1 {
-  background-color: green;
+.personalPage h1 {
+  font-size: 2.7em;
+  color: #95B7A5;
 }
-
-input {
-  color: violet;
+.personalPage h2 {
+  font-size: 2.2em;
+  color: #DDE9E2;
+}
+.personalPage button {
+  font-size: 1.6em;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 25px;
+  background-color: #785167;
+  border: none;
+  color: #DDE9E2;
+  text-decoration: underline;
+}
+.personalPage .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.personalPage .box article {
+  margin-top: 55px;
+  padding: 25px;
+  font-size: 1.2em;
+  height: 750px;
+  background-color: #95B7A5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.personalPage .box article button {
+  background-color: #DDE9E2;
+  color: black;
+}
+.personalPage .box article p {
+  text-align: center;
+}
+.personalPage .box .Triangle {
+  height: 0;
+  width: 0;
+  border-top: 72px solid transparent;
+  border-left: 480px solid #95B7A5;
+  margin-top: 55px;
+  margin-bottom: -55px;
+}
+.personalPage .box .article {
+  width: 25%;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: baseline;
+}
+.personalPage .TriangleSolo {
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  height: 0;
+  width: 0;
+  border-right: 767px solid #785167;
+  border-top: 250px solid transparent;
 }/*# sourceMappingURL=main.css.map */
